@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "FuhgU5VseIszt42URwd9/lrU2fUrEqMeRZCGERBw+uD8w60eSOsu3D3XCeX0sLXwLsbqNNfRk7Hbhb4ePNwmyQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Jaswir Raghoe\\Documents\\Backend-Experiments\\EmployeeesWebAPI\\WebAPITemplate\\WebAPITemplate.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Jaswir Raghoe\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\Jaswir Raghoe\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Jaswir Raghoe\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\Jaswir Raghoe\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\Jaswir Raghoe\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\Jaswir Raghoe\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
+  "logs": []
+}
