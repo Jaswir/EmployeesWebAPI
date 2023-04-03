@@ -37,7 +37,8 @@ namespace EmployeesWebAPI.Controllers
             var employee = new Employee()
             {
                 Id = Guid.NewGuid(),
-                Name = addEmployeeRequest.Name,
+                FirstName = addEmployeeRequest.FirstName,
+                LastName = addEmployeeRequest.LastName,
                 Email = addEmployeeRequest.Email,
                 Department = addEmployeeRequest.Department,
                 Salary = addEmployeeRequest.Salary,
@@ -61,7 +62,8 @@ namespace EmployeesWebAPI.Controllers
             var viewModel = new UpdateEmployeeViewModel()
             {
                 Id = employee.Id,
-                Name = employee.Name,
+                FirstName = employee.FirstName,
+                LastName = employee.LastName,
                 Email = employee.Email,
                 Department = employee.Department,
                 Salary = employee.Salary,
@@ -80,8 +82,8 @@ namespace EmployeesWebAPI.Controllers
 
             if (employee != null)
             {
-
-                employee.Name = model.Name;
+                employee.FirstName = model.FirstName;
+                employee.LastName = model.LastName;
                 employee.Email = model.Email;
                 employee.Department = model.Department;
                 employee.Salary = model.Salary;

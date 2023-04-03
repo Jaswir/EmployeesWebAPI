@@ -26,6 +26,34 @@ namespace EmployeesWebAPI.Controllers
             return employees;
         }
 
+        // GET: api/EmployeesAPI/firstname
+        [HttpGet("firstname/{firstname}")]
+        public async Task<ActionResult<Employee>> GetFirstName(string firstName)
+        {
+            var employee = await ApplicationDbContext.Employees.FirstOrDefaultAsync(x => x.FirstName == firstName);
+
+            if (employee == null)
+            {
+                return NotFound();
+            }
+
+            return employee;
+        }
+
+        // GET: api/EmployeesAPI/department
+        [HttpGet("department/{department}")]
+        public async Task<ActionResult<IEnumerable<Employee>>> GetDepartment(string department)
+        {
+            var employees = await ApplicationDbContext.Employees.Where(x => x.Department == department).ToListAsync();
+
+            if (employees == null)
+            {
+                return NotFound();
+            }
+
+            return employees;
+        }
+
         [HttpPost]
         public async Task<ActionResult<IEnumerable<Employee>>> PostEmployee(Employee employee)
         {
@@ -36,12 +64,24 @@ namespace EmployeesWebAPI.Controllers
             return CreatedAtAction("Get", new { id = employee.Id }, employee);
         }
 
-        // GET api/<EmployeesAPIController>/5
-        [HttpGet("dog")]
-        public string Get(int id)
-        {
-            return "dog";
-        }
+        //[HttpDelete("{firstname}")]
+        //public async Task<ActionResult<IEnumerable<Employee>>> PutEmployee(string firstName, Employee employee)
+        //{
+        //    if (firstName != employee.FirstName)
+        //    {
+        //        //Error 400 => Client error, client does something wrong
+        //        return BadRequest();
+        //    }
+
+        //    ApplicationDbContext.Entry(employee).State = EntityState.Modified;
+
+        //    await ApplicationDbContext.SaveChangesAsync();
+
+        //    //Give 201 Status code if succesfully created
+        //    return CreatedAtAction("Get", new { id = employee.Id }, employee);
+        //}
+
+
 
         // POST api/<EmployeesAPIController>
         //[HttpPost]
@@ -56,9 +96,9 @@ namespace EmployeesWebAPI.Controllers
         }
 
         // DELETE api/<EmployeesAPIController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
+        //[HttpDelete("{id}")]
+        //public void Delete(int id)
+        //{
+        //}
     }
 }

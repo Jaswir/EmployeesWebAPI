@@ -11114,11 +11114,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Jaswir Raghoe\\Documents\\Backend-Experiments\\EmployeeesWebAPI\\EmployeesWebAPI\\EmployeesWebAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Jaswir Raghoe\\source\\repos\\EmployeesWebAPI\\EmployeesWebAPI\\EmployeesWebAPI.csproj",
       "projectName": "EmployeesWebAPI",
-      "projectPath": "C:\\Users\\Jaswir Raghoe\\Documents\\Backend-Experiments\\EmployeeesWebAPI\\EmployeesWebAPI\\EmployeesWebAPI.csproj",
+      "projectPath": "C:\\Users\\Jaswir Raghoe\\source\\repos\\EmployeesWebAPI\\EmployeesWebAPI\\EmployeesWebAPI.csproj",
       "packagesPath": "C:\\Users\\Jaswir Raghoe\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Jaswir Raghoe\\Documents\\Backend-Experiments\\EmployeeesWebAPI\\EmployeesWebAPI\\obj\\",
+      "outputPath": "C:\\Users\\Jaswir Raghoe\\source\\repos\\EmployeesWebAPI\\EmployeesWebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Jaswir Raghoe\\AppData\\Roaming\\NuGet\\NuGet.Config",
