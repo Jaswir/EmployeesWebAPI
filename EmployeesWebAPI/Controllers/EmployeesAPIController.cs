@@ -19,38 +19,10 @@ namespace EmployeesWebAPI.Controllers
         }
 
         // GET: api/EmployeesAPI
-        [HttpGet]
+        [HttpGet("{id}")]
         public async Task<ActionResult<IEnumerable<Employee>>> Get()
         {
             var employees = await ApplicationDbContext.Employees.ToListAsync();
-            return employees;
-        }
-
-        // GET: api/EmployeesAPI/firstname
-        [HttpGet("firstname/{firstname}")]
-        public async Task<ActionResult<Employee>> GetFirstName(string firstName)
-        {
-            var employee = await ApplicationDbContext.Employees.FirstOrDefaultAsync(x => x.FirstName == firstName);
-
-            if (employee == null)
-            {
-                return NotFound();
-            }
-
-            return employee;
-        }
-
-        // GET: api/EmployeesAPI/department
-        [HttpGet("department/{department}")]
-        public async Task<ActionResult<IEnumerable<Employee>>> GetDepartment(string department)
-        {
-            var employees = await ApplicationDbContext.Employees.Where(x => x.Department == department).ToListAsync();
-
-            if (employees == null)
-            {
-                return NotFound();
-            }
-
             return employees;
         }
 
@@ -64,7 +36,63 @@ namespace EmployeesWebAPI.Controllers
             return CreatedAtAction("Get", new { id = employee.Id }, employee);
         }
 
-        //[HttpDelete("{firstname}")]
+        // GET: api/EmployeesAPI/firstname
+        [HttpGet("{firstname}")]
+        public async Task<ActionResult<Employee>> GetFirstName(string firstName)
+        {
+            //First or Default Async cause there can be more that match the condition
+            var employee = await ApplicationDbContext.Employees.FirstOrDefaultAsync(x => x.FirstName == firstName);
+
+            if (employee == null)
+            {
+                //404
+                return NotFound();
+            }
+
+            return employee;
+        }
+
+
+        //[HttpDelete("firstname/{firstname}")]
+        //public async Task<ActionResult<IEnumerable<Employee>>> DeleteEmployee(string firstName)
+        //{
+        //    //Find Async : get item given its primary key,
+        //    // Optimized for finding an entity with a primary key,
+        //    // by returning the entity without hitting the database if the entity was tracked.
+        //    //
+        //    var employee = await ApplicationDbContext.Employees.FirstOrDefaultAsync(x => x.FirstName == firstName);
+        //    if (employee == null)
+        //    {
+        //        //404
+        //        return NotFound();
+        //    }
+
+        //    ApplicationDbContext.Employees.Remove(employee);
+        //    await ApplicationDbContext.SaveChangesAsync();
+
+
+        //    //204 No content to return 
+        //    return NoContent();
+        //}
+
+        // GET: api/EmployeesAPI/department
+        [HttpGet("department")]
+        public async Task<ActionResult<IEnumerable<Employee>>> GetDepartment(string department)
+        {
+            var employees = await ApplicationDbContext.Employees.Where(x => x.Department == department).ToListAsync();
+
+            if (employees == null)
+            {
+                //404
+                return NotFound();
+            }
+
+            return employees;
+        }
+
+     
+
+        //[HttpPut("firstname/{firstname}")]
         //public async Task<ActionResult<IEnumerable<Employee>>> PutEmployee(string firstName, Employee employee)
         //{
         //    if (firstName != employee.FirstName)
@@ -83,22 +111,5 @@ namespace EmployeesWebAPI.Controllers
 
 
 
-        // POST api/<EmployeesAPIController>
-        //[HttpPost]
-        //public void Post([FromBody] string value)
-        //{
-        //}
-
-        // PUT api/<EmployeesAPIController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/<EmployeesAPIController>/5
-        //[HttpDelete("{id}")]
-        //public void Delete(int id)
-        //{
-        //}
     }
 }
