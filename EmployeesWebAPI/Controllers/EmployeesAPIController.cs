@@ -19,7 +19,7 @@ namespace EmployeesWebAPI.Controllers
         }
 
         // GET: api/EmployeesAPI
-        [HttpGet("{id}")]
+        [HttpGet()]
         public async Task<ActionResult<IEnumerable<Employee>>> Get()
         {
             var employees = await ApplicationDbContext.Employees.ToListAsync();
